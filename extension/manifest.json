@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "KAIST AutoAuth",
+  "version": "1.0",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{78e0856a-7ae8-4dd9-8c05-8da6be9b69c8}"
+    }
+  },
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "content_scripts": [{
+    "js": [
+      "main.js"
+    ],
+    "matches": [
+      "*://iam2.kaist.ac.kr/#/checkOtp"
+    ]
+  }],
+
+  "options_ui": {
+    "browser_style": false,
+    "page": "options.html"
+  },
+
+  "permissions": [
+    "storage",
+    "*://iam2.kaist.ac.kr/*"
+  ],
+
+  "optional_permissions": [
+    "<all_urls>"
+  ]
+}

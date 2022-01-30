@@ -38,6 +38,7 @@ def main():
                 auth_code = b'000000'
 
             self.send_response(200)
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.send_header('Content-Type', 'text/plain')
             self.end_headers()
             self.wfile.write(auth_code)

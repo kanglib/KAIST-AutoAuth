@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "KAIST AutoAuth",
-  "version": "2.0",
+  "version": "3.0",
 
   "background": {
     "service_worker": "background.js"

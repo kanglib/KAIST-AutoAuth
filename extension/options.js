@@ -1,21 +1,17 @@
 /* jshint esversion: 8 */
 /* globals chrome */
 
-var DEFAULT_SERVER = 'localhost:8080';
-
-var server = document.getElementById('server');
-var message = document.getElementById('message');
+const digest = document.getElementById('digest');
+const message = document.getElementById('message');
 
 async function onClickSave() {
-  var hostname = server.value.split(':')[0];
   setTimeout(() => message.textContent = '', 2000);
-  var options = {server: server.value};
-  chrome.storage.local.set(options)
+  chrome.storage.local.set({digest: digest.value})
       .then(() => message.textContent = 'Saved!')
       .catch(() => message.textContent = 'Error!');
 }
 
-chrome.storage.local.get('server').then(options => {
-  server.value = options.server ? options.server : DEFAULT_SERVER;
+chrome.storage.local.get('digest').then(options => {
+  digest.value = options.digest;
   document.getElementById('save').onclick = onClickSave;
 });

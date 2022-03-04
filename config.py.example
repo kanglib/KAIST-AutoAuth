@@ -1,4 +1,0 @@
-MAIL = {'host': 'imap.gmail.com'}  # int port, bool ssl
-CRED = ('<ID>', '<PW>')
-FOLDER = 'INBOX'
-HOST = ('', 8080)
